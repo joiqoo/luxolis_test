@@ -1,6 +1,6 @@
 # luxolis_test
 
-This template should help you setup, compile and build with the VUE3 project.
+This README should help you setup, compile and build with the VUE3 project.
 
 ## Recommended IDE Setup
 
