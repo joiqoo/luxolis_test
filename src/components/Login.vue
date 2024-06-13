@@ -4,11 +4,12 @@
     <!-- login form content here -->
     <form class="login-form">
       <input type="text" v-model="username" placeholder="USERNAME" class="username-input" />
-      <input type="password" v-model="password" placeholder="PASSWORD" class="password-input" @input="validatePassword" />
+      <input type="password" v-model="password" placeholder="PASSWORD" class="password-input"
+        @input="validatePassword" />
       <div v-if="showError" class="error-message">Wrong combination</div>
       <button @click="handleLogin" class="login-button">LOGIN</button>
+      <div class="forgot-password">Forgot password?</div>
     </form>
-    <div class="forgot-password">Forgot password?</div>
   </div>
 </template>
 
@@ -41,17 +42,22 @@ const handleLogin = () => {
 
 <style scoped>
 .login-container {
-  position: relative;
-  width: 1280px;
-  height: 720px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
   background: #2148C0 url('@/assets/background.svg') no-repeat center center;
+  background-size: cover;
+  padding: 20px;
 }
 
 .login-image {
   position: absolute;
   width: 119.39px;
   height: 97.85px;
-  left: 580px;
+  left: 50%;
+  transform: translateX(-50%);
   top: 161px;
 }
 
@@ -59,7 +65,8 @@ const handleLogin = () => {
   position: absolute;
   width: 300px;
   height: 398px;
-  left: 490px;
+  left: 50%;
+  transform: translateX(-50%);
   top: 161px;
   background: transparent;
 }
@@ -70,16 +77,18 @@ const handleLogin = () => {
   height: 45px;
   left: 0;
   top: 169px;
-  padding-left: 40px; /* Adjust padding to make space for the icon */
+  padding-left: 40px;
+  /* Adjust padding to make space for the icon */
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
 
   background: url('../assets/user.svg') no-repeat 10px center;
-  background-size: 20px 20px; 
+  background-size: 20px 20px;
 }
+
 .username-input::placeholder {
-  color: #fff; 
+  color: #fff;
 }
 
 .password-input {
@@ -88,16 +97,17 @@ const handleLogin = () => {
   height: 45px;
   left: 0;
   top: 234px;
-  padding-left: 40px; 
+  padding-left: 40px;
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
 
   background: url('../assets/lock.svg') no-repeat 10px center;
-  background-size: 20px 20px; 
+  background-size: 20px 20px;
 }
+
 .password-input::placeholder {
-  color: #fff; 
+  color: #fff;
 }
 
 .login-button {
@@ -106,20 +116,20 @@ const handleLogin = () => {
   height: 45px;
   left: 0;
   top: 322px;
-  background-color: #fff; 
+  background-color: #fff;
   border: none;
-  border-radius: 5px; 
+  border-radius: 5px;
   cursor: pointer;
-  font-size: 16px; 
-  color: #2148C0; 
+  font-size: 16px;
+  color: #2148C0;
 }
 
 .forgot-password {
   position: absolute;
-  width: 146px;
+  width: 300px;
   height: 20px;
-  left: 644px;
-  top: 539px;
+  left: 87px;
+  top: 380px;
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -128,6 +138,7 @@ const handleLogin = () => {
   text-align: center;
   color: #FFFFFF;
 }
+
 
 .error-message {
   color: red;
