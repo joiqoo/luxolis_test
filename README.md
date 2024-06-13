@@ -1,6 +1,6 @@
 # luxolis_test
 
-This template should help get you started developing with Vue 3 in Vite.
+This README should help you setup, compile and build with the VUE3 project.
 
 ## Recommended IDE Setup
 
